@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+        <form action="{% url 'item-create' rest_obj.id %}" method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="submit" value="Signup" class="btn btn-outline-primary">
+        </form>
+
+{% endblock content %} 
